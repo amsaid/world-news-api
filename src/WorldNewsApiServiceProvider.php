@@ -17,7 +17,7 @@ class WorldNewsApiServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('world-news-api')
-            ->hasConfigFile()
+            ->hasConfigFile('news')
             ->publishesServiceProvider('WorldNewsApiServiceProvider')
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command

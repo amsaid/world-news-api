@@ -4,7 +4,7 @@ namespace Amsaid\WorldNewsApi;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Amsaid\WorldNewsApi\Commands\WorldNewsApiCommand;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 
 class WorldNewsApiServiceProvider extends PackageServiceProvider
 {
@@ -18,6 +18,13 @@ class WorldNewsApiServiceProvider extends PackageServiceProvider
         $package
             ->name('world-news-api')
             ->hasConfigFile()
-            ->hasCommand(WorldNewsApiCommand::class);
+            ->publishesServiceProvider('WorldNewsApiServiceProvider')
+            ->hasInstallCommand(function (InstallCommand $command) {
+                $command
+                    ->publishConfigFile()
+                    ->copyAndRegisterServiceProviderInApp()
+                    ->askToStarRepoOnGitHub('amsaid/world-news-api');
+            })
+        ;
     }
 }

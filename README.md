@@ -41,7 +41,7 @@ return [
 ```php
 use Amsaid\WorldNewsApi\Facades\NewsApi;
 
-$news = NewsApi::topNews('US', 'en');
+$news = NewsApi::searchNews('Messi', 'US', 'en');
 ```
 
 ## Credits

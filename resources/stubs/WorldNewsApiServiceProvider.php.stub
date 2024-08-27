@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Amsaid\WorldNewsApi\WorldNewsApi;
+
+class WorldNewsApiServiceProvider.php extends ServiceProvider
+{
+    /**
+     * Register services.
+     */
+    public function register(): void
+    {
+        $this->app->singleton('news', function ($app) {
+            $news = new WorldNewsApi();
+            $news->getConfig()->setApiKey('api-key', config('news.apikey'));
+            return $news;
+        });
+
+        $this->app->alias('news', WorldNewsApi::class);
+
+    }
+
+
+}

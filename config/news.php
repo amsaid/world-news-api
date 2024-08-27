@@ -1,4 +1,6 @@
 <?php
 
 // config for Amsaid/WorldNewsApi
-return [];
+return [
+    'apikey' => env('NEWS_API_KEY', 'your-api-key'),
+];

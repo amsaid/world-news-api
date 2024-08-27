@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Amsaid\WorldNewsApi\WorldNewsApi
  */
-class WorldNewsApi extends Facade
+class NewsApi extends Facade
 {
     protected static function getFacadeAccessor(): string
     {

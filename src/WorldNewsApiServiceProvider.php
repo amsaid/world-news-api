@@ -18,8 +18,6 @@ class WorldNewsApiServiceProvider extends PackageServiceProvider
         $package
             ->name('world-news-api')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_world_news_api_table')
             ->hasCommand(WorldNewsApiCommand::class);
     }
 }

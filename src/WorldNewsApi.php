@@ -2,4 +2,6 @@
 
 namespace Amsaid\WorldNewsApi;
 
-class WorldNewsApi {}
+use Amsaid\WorldNewsApi\Lib\Api\NewsApi;
+
+class WorldNewsApi extends NewsApi {}

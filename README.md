@@ -20,13 +20,11 @@ You can install the package via composer:
 composer require amsaid/world-news-api
 ```
 
-You can publish and run the migrations with:
-
-
-You can publish the config file with:
+You can publish the config file and the service provider with:
 
 ```bash
-php artisan vendor:publish --tag="world-news-api-config"
+php artisan world-news-api:install
+
 ```
 
 This is the contents of the published config file:
@@ -44,7 +42,6 @@ return [
 use Amsaid\WorldNewsApi\Facades\NewsApi;
 
 $news = NewsApi::topNews('US', 'en');
-
 ```
 
 ## Credits

@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Amsaid\WorldNewsApi\WorldNewsApi;
 
-class WorldNewsApiServiceProvider.php extends ServiceProvider
+class WorldNewsApiServiceProvider extends ServiceProvider
 {
     /**
      * Register services.

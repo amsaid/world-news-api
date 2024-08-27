@@ -1,14 +1,14 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Amsaid\WorldNewsApi\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class WorldNewsApiCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'news';
 
-    public $description = 'My command';
+    public $description = 'World news api';
 
     public function handle(): int
     {

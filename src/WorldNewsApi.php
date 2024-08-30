@@ -49,26 +49,26 @@ class WorldNewsApi extends NewsApi
         ?int $number = null
     ): Collection {
         return collect(
-            collect(
-                $this->searchNews(
-                    text: $query,
-                    source_countries: $countries,
-                    language: $language,
-                    min_sentiment: $min_sentiment,
-                    max_sentiment: $max_sentiment,
-                    earliest_publish_date: $min_date,
-                    latest_publish_date: $max_date,
-                    news_sources: $news_sources,
-                    categories: $categories,
-                    entities: $entities,
-                    authors: $authors,
-                    location_filter: $location_filter,
-                    sort: $sort,
-                    sort_direction: $sort_direction,
-                    offset: $offset,
-                    number: $number
-                )->getNews()
-            )->toArray()
-        );
+            $this->searchNews(
+                text: $query,
+                source_countries: $countries,
+                language: $language,
+                min_sentiment: $min_sentiment,
+                max_sentiment: $max_sentiment,
+                earliest_publish_date: $min_date,
+                latest_publish_date: $max_date,
+                news_sources: $news_sources,
+                categories: $categories,
+                entities: $entities,
+                authors: $authors,
+                location_filter: $location_filter,
+                sort: $sort,
+                sort_direction: $sort_direction,
+                offset: $offset,
+                number: $number
+            )->getNews()
+        )->map(function ($item) {
+            return collect($item)->toArray();
+        });
     }
 }

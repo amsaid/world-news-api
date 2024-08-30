@@ -5,6 +5,7 @@ namespace Amsaid\WorldNewsApi\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
+ * @method static \Illuminate\Support\Collection search(string $query, string $countries, string $language, float $min_sentiment, float $max_sentiment, string $min_date, string $max_date, string $news_sources, string $authors, string $categories, string $entities, string $location_filter, string $sort, string $sort_direction, int $offset, int $number)
  * @method static \Amsaid\WorldNewsApi\Lib\Model\ExtractNews200Response extractNews(string $url, bool $analyze, string $contentType)
  * @method static \Amsaid\WorldNewsApi\Lib\Model\ExtractNewsLinks200Response extractNewsLinks(string $url, bool $analyze, string $contentType)
  * @method static \Amsaid\WorldNewsApi\Lib\Model\GetGeoCoordinates200Response getGeoCoordinates(string $location, string $contentType)

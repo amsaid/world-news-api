@@ -31,22 +31,22 @@ class WorldNewsApi extends NewsApi
      * @return \Illuminate\Support\Collection<TKey, TValue>
      */
     public function search(
-        ?string $query,
-        ?string $countries,
-        ?string $language,
-        ?float $min_sentiment,
-        ?float $max_sentiment,
-        ?string $min_date,
-        ?string $max_date,
-        ?string $news_sources,
-        ?string $authors,
-        ?string $categories,
-        ?string $entities,
-        ?string $location_filter,
-        ?string $sort,
-        ?string $sort_direction,
-        ?int $offset,
-        ?int $number
+        ?string $query = null,
+        ?string $countries = null,
+        ?string $language = null,
+        ?float $min_sentiment = null,
+        ?float $max_sentiment = null,
+        ?string $min_date = null,
+        ?string $max_date = null,
+        ?string $news_sources = null,
+        ?string $authors = null,
+        ?string $categories = null,
+        ?string $entities = null,
+        ?string $location_filter = null,
+        ?string $sort = null,
+        ?string $sort_direction = null,
+        ?int $offset = null,
+        ?int $number = null
     ): Collection {
         return collect(
             $this->searchNews(

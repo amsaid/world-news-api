@@ -68,7 +68,7 @@ class WorldNewsApi extends NewsApi
                 number: $number
             )->getNews()
         )->map(function ($item) {
-            return collect($item)->toArray();
+            return collect($item);
         });
     }
 }

@@ -41,7 +41,42 @@ return [
 ```php
 use Amsaid\WorldNewsApi\Facades\NewsApi;
 
-$news = NewsApi::search( query: 'Messi', countries: 'us', language: 'en');
+$news = NewsApi::search(query: 'Messi', countries: 'us', language: 'en'); // returns a collection of news items
+$newsItem = $news->first(); // returns a single news item collection
+
+// All news items are Laravel collections
+$newsItem->toJson(); /* returns
+{
+    "summary": "Joan Monfort never believed in fate...",
+    "image": "https://a.espncdn.com/photo/2024/0710/r1356881_1296x729_16-9.jpg",
+    "sentiment": -0.456,
+    "author": "Sid Lowe",
+    "language": "en",
+    "video": null,
+    "title": "Photographer didn't believe in destiny...",
+    "url": "https://www.espn.com/soccer/story/_/id/4088...",
+    "source_country": "US",
+    "id": 254279758,
+    "text": "...",
+    "category": null,
+    "publish_date": "2024-08-16 18:40:10",
+    "authors": [
+      "Sid Lowe"
+    ]
+  }
+*/
+
+// Access the summary of the first news item
+$newsItem->get('summary'); // 'Joan Monfort never believed in fate...'
+
+// Access the author of the first news item
+$newsItem->get('author'); // 'Sid Lowe'
+
+// Loop through each news item
+foreach ($news as $item) {
+    // Access the title of each news item
+    echo $item->get('title');
+}
 ```
 
 ## Credits
